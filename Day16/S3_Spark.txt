@@ -1,0 +1,51 @@
+pyspark --packages org.apache.hadoop:hadoop-aws:3.3.2
+
+Get the version to install
+The following example, show you how to achieve it, in the case you install pySpark in your python environment (with pip install pyspark for example).
+
+Inside of your Python environment, go to the site-packages folder and search inside of the pyspark/jars the Hadoop client version:
+
+cd venv/lib/python<YOUR_PYTHON_VERSION>/site-packages/pyspark/jars
+ls hadoop-client-*
+
+ Download the package from MAVEN repository « hadoop-aws »
+Go to https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws Select the correct version (based on what you discovered previously):
+
+Move the .jar file to the pySpark environment
+Now, copy from where the .jar file is saved to the pySpark environment, i.e.,
+
+venv/lib/python<YOUR_PYTHON_VERSION>/site-packages/pyspark/jars
+
+mybucket222024
+
+s3://mybucket222024/DEPT.json
+
+deptDF=spark.read.option("awsAccessKey","XXXXXXXX").option("awsSecretKey","XXXXXXXXX").json("s3://mybucket222024/DEPT.json")
+
+
+CRUD --> CREATE,READ,UPDATE,DELETE [NOSQL]
+
+ACID --> ATOMOCITY, CONSISTENCY, INTEGRITY,DURABILITY [RDBMS]
+
+BASE
+
+HBASE
+CASSANDRA
+MONGODB
+DYNAMODB
+SNOWFLAKE
+COSMOSDB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
